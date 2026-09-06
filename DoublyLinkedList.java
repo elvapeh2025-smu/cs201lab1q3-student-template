@@ -121,13 +121,15 @@ public class DoublyLinkedList<E> {
             Node<E> next = current.getNext();
 
             if (current.getElement() == null) {
-                Node<E> lastNull = header.getNext();
 
-                // remove frm pos
+                // remove current from its position
                 current.getPrev().setNext(current.getNext());
                 current.getNext().setPrev(current.getPrev());
 
-                // insert curr in front
+                // get the current first node AFTER removing current
+                Node<E> lastNull = header.getNext();
+
+                // insert current at the front
                 current.setPrev(header);
                 current.setNext(lastNull);
                 header.setNext(current);

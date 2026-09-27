@@ -122,14 +122,14 @@ public class DoublyLinkedList<E> {
 
             if (current.getElement() == null) {
 
-                // remove current from its position
+                // rmv current from its position
                 current.getPrev().setNext(current.getNext());
                 current.getNext().setPrev(current.getPrev());
 
-                // get the current first node AFTER removing current
+                // get the current first node aft removing current
                 Node<E> lastNull = header.getNext();
 
-                // insert current at the front
+                // insert curr at the front
                 current.setPrev(header);
                 current.setNext(lastNull);
                 header.setNext(current);
